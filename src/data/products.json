@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "name": "Wireless Headphones",
+    "price": 79.99,
+    "currency": "USD",
+    "image": "https://picsum.photos/id/180/500/500",
+    "shortDescription": "Noise‑isolating wireless headphones",
+    "description": "High‑quality wireless headphones with deep bass and long battery life.",
+    "category": "Electronics",
+    "rating": 4.5,
+    "stock": 15
+  },
+  {
+    "id": 2,
+    "name": "Smart Watch",
+    "price": 129.99,
+    "currency": "USD",
+    "image": "https://picsum.photos/id/1060/500/500",
+    "shortDescription": "Fitness smart watch",
+    "description": "Track fitness, heart rate, and sleep with ease.",
+    "category": "Wearables",
+    "rating": 4.3,
+    "stock": 10
+  },
+  {
+    "id": 3,
+    "name": "Bluetooth Speaker",
+    "price": 49.99,
+    "currency": "USD",
+    "image": "https://picsum.photos/id/1080/500/500",
+    "shortDescription": "Portable speaker",
+    "description": "Compact speaker with powerful sound.",
+    "category": "Audio",
+    "rating": 4.1,
+    "stock": 22
+  },
+  {
+    "id": 4,
+    "name": "Laptop Backpack",
+    "price": 39.99,
+    "currency": "USD",
+    "image": "https://picsum.photos/id/1011/500/500",
+    "shortDescription": "Water‑resistant backpack",
+    "description": "Durable backpack suitable for laptops up to 15 inches.",
+    "category": "Accessories",
+    "rating": 4.4,
+    "stock": 30
+  },
+  {
+    "id": 5,
+    "name": "USB‑C Charger",
+    "price": 19.99,
+    "currency": "USD",
+    "image": "https://picsum.photos/id/1062/500/500",
+    "shortDescription": "Fast charging adapter",
+    "description": "Quick charge USB‑C power adapter for phones and laptops.",
+    "category": "Electronics",
+    "rating": 4.2,
+    "stock": 50
+  },
+  {
+    "id": 6,
+    "name": "Gaming Mouse",
+    "price": 29.99,
+    "currency": "USD",
+    "image": "https://picsum.photos/id/1005/500/500",
+    "shortDescription": "Ergonomic gaming mouse",
+    "description": "High‑precision gaming mouse with adjustable DPI.",
+    "category": "Accessories",
+    "rating": 4.6,
+    "stock": 18
+  },
+  {
+    "id": 7,
+    "name": "Mechanical Keyboard",
+    "price": 89.99,
+    "currency": "USD",
+    "image": "https://picsum.photos/id/1044/500/500",
+    "shortDescription": "RGB mechanical keyboard",
+    "description": "Durable mechanical keyboard with customizable RGB lighting.",
+    "category": "Accessories",
+    "rating": 4.7,
+    "stock": 12
+  },
+  {
+    "id": 8,
+    "name": "Desk Lamp",
+    "price": 24.99,
+    "currency": "USD",
+    "image": "https://picsum.photos/id/1015/500/500",
+    "shortDescription": "LED desk lamp",
+    "description": "Energy‑efficient LED desk lamp with adjustable brightness.",
+    "category": "Home",
+    "rating": 4.0,
+    "stock": 25
+  },
+  {
+    "id": 9,
+    "name": "Portable SSD",
+    "price": 99.99,
+    "currency": "USD",
+    "image": "https://picsum.photos/id/1024/500/500",
+    "shortDescription": "High‑speed portable storage",
+    "description": "Fast portable SSD for backups and large file transfers.",
+    "category": "Storage",
+    "rating": 4.8,
+    "stock": 9
+  },
+  {
+    "id": 10,
+    "name": "Noise Cancelling Earbuds",
+    "price": 59.99,
+    "currency": "USD",
+    "image": "https://picsum.photos/id/103/500/500",
+    "shortDescription": "True wireless earbuds",
+    "description": "Compact earbuds with active noise cancellation.",
+    "category": "Audio",
+    "rating": 4.3,
+    "stock": 20
+  }
+]
