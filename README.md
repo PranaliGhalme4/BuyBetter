@@ -1,18 +1,59 @@
-# React + Vite
+🛒 BuyBetter
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+BuyBetter is a modern and responsive React-based web application that displays products in a clean grid layout, helping users browse and compare items easily.
+The project focuses on better UI, responsive design, and scalable frontend structure.
 
-Currently, two official plugins are available:
+🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+📦 Product listing with reusable card components
+📱 Fully responsive grid (desktop, tablet, and mobile)
+🔍 Filter and sort products for better browsing
+🎨 Clean and simple UI
+⚡ Fast development using Vite
+🧩 Modular and scalable React component structure
 
-## React Compiler
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+🛠️ Tech Stack
 
-Note: This will impact Vite dev & build performances.
+React
+Vite
+JavaScript (ES6+)
+CSS (Custom styling, no Tailwind)
+Git & GitHub
 
-## Expanding the ESLint configuration
+📂 Project Structure
+buy-better/
+├── public/
+├── src/
+│   ├── components/
+│   │   ├── ProductCard.jsx
+│   │   ├── ProductList.jsx
+│   │   └── FilterCard.jsx
+│   ├── data/
+│   │   └── products.json
+│   ├── styles/
+│   │   └── styles.css
+│   ├── App.jsx
+│   └── main.jsx
+├── index.html
+├── package.json
+└── README.md
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+⚙️ Installation & Setup
+1. Clone the repository
+   git clone https://github.com/PranaliGhalme4/BuyBetter.git
+
+2. Navigate to the project directory
+   cd BuyBetter
+
+3. Install dependencies
+   npm install
+
+4. Start the development server
+  npm run dev
+
+5. Open in browser
+   http://localhost:5173
+
+📸 Screenshots
+Screenshots will be added soon.
