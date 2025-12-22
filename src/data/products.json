@@ -110,7 +110,7 @@
   {
     "id": 10,
     "name": "Noise Cancelling Earbuds",
-    "price": 59.99,
+    "price": 1234,
     "currency": "USD",
     "image": "https://picsum.photos/id/103/500/500",
     "shortDescription": "True wireless earbuds",
