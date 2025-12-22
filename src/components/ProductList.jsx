@@ -1,8 +1,8 @@
-import products from "../data/products.json";
+// import products from "../data/products.json";
 import ProductCard from "./ProductCard";
 
 
-export default function ProductList() {
+export default function ProductList({products}) {
 return (
 <div className="grid">
 {products.map((product) => (

@@ -6,7 +6,7 @@ import "../home.css";
 
 const Home = () => {
   const [category, setCategory] = useState("all");
-  const [price, setPrice] = useState(5000);
+  const [price, setPrice] = useState(200);
   const [rating, setRating] = useState(0);
 
   const filteredProducts = products.filter((product) => {

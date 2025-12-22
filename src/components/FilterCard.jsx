@@ -33,7 +33,7 @@ const FilterCard = ({
           type="range"
           min="1"
           max="200"
-          step="10"
+          step="5"
           value={price}
           onChange={(e) => setPrice(e.target.value)}
         />
