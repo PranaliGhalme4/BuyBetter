@@ -6,11 +6,13 @@ const FilterCard = ({
   price,
   setPrice,
   rating,
-  setRating
+  setRating,
+  totalProducts
 }) => {
   return (
     <div className="filter-card">
       <h3>Filters</h3>
+      <h4>Total Products :{totalProducts} </h4>
 
       {/* Category */}
       <div className="filter-group">
@@ -33,7 +35,7 @@ const FilterCard = ({
           type="range"
           min="1"
           max="200"
-          step="5"
+          step="1"
           value={price}
           onChange={(e) => setPrice(e.target.value)}
         />
