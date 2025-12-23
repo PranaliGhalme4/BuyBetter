@@ -10,4 +10,34 @@
   .home-layout {
     flex-direction: column;
   }
+  .search-input {
+    width: 90%;
+  }
 }
+
+.home-page {
+  width: 100%;
+}
+
+/* 🔍 Search bar container */
+.search-bar-wrapper {
+  width: 70%;
+  padding-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+/* 🔍 Input */
+.search-input {
+  width: 70%;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #333;
+}
+
+

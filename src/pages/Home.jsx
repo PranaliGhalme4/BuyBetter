@@ -8,9 +8,12 @@ const Home = () => {
   const [category, setCategory] = useState("all");
   const [price, setPrice] = useState(200);
   const [rating, setRating] = useState(0);
+  const [search, setSearch] = useState("");
+
   const filteredProducts = products.filter((product) => {
     console.log("product category",product.rating , rating);
     return (
+      product?.name?.toLowerCase()?.includes(search?.toLowerCase()) &&
       (category === "all" || product.category.toLowerCase() === category.toLowerCase()) &&
       product.price <= price &&
       product.rating >= rating
@@ -20,8 +23,25 @@ const Home = () => {
   console.log("filtered products", filteredProducts.length);
 
   return (
+    <div className="home-page">
+      <div style={{display:"flex", paddingLeft:"30px"}}>
+      <div>
+      <h4>Total Products :{filteredProducts?.length} </h4>
+      </div>
+      <div className="search-bar-wrapper">
+        <input
+          type="text"
+          placeholder="Search products..."
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+          className="search-input"
+        />
+      </div>
+      </div>
+      
+    
     <div className="home-layout">
-      <FilterCard
+      <FilterCard      
         selectedCategory={category}
         setSelectedCategory={setCategory}
         price={price}
@@ -32,6 +52,7 @@ const Home = () => {
       />
 
       <ProductList products={filteredProducts} />
+    </div>
     </div>
   );
 };
