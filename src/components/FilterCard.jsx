@@ -12,7 +12,6 @@ const FilterCard = ({
   return (
     <div className="filter-card">
       <h3>Filters</h3>
-      <h4>Total Products :{totalProducts} </h4>
 
       {/* Category */}
       <div className="filter-group">
