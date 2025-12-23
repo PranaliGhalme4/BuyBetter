@@ -1,0 +1,13 @@
+.home-layout {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  align-items: flex-start;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .home-layout {
+    flex-direction: column;
+  }
+}
