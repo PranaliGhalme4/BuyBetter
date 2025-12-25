@@ -40,4 +40,24 @@
   border-color: #333;
 }
 
+.no-data {
+  flex: 1;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #555;
+}
+
+.no-data h2 {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.no-data p {
+  font-size: 16px;
+  color: #888;
+}
 
