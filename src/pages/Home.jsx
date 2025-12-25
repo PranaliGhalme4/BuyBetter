@@ -51,7 +51,18 @@ const Home = () => {
         totalProducts={filteredProducts.length}
       />
 
-      <ProductList products={filteredProducts} />
+      {filteredProducts.length > 0 ? (
+  <ProductList products={filteredProducts} />
+) : (
+  <div className="grid">
+    <div style={{width:"max-content"}}>
+      <h2> No products found 😕</h2>
+      </div>
+      <div> 
+
+    </div>
+  </div>
+)}
     </div>
     </div>
   );
