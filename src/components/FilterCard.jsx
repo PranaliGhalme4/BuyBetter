@@ -1,4 +1,4 @@
-import "./FilterCard.css";
+import "./filterCard.css";
 
 const FilterCard = ({
   selectedCategory,
