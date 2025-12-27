@@ -1,17 +1,15 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import ProductDetails from "./components/ProductDetails";
 import "./styles.css";
 
 function App() {
-return (
-<Router>
-<Routes>
-<Route path="/" element={<Home />} />
-<Route path="/product/:id" element={<ProductDetails />} />
-</Routes>
-</Router>
-);
+  return (
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/product/:id" element={<ProductDetails />} />
+    </Routes>
+  );
 }
 
-export default App
+export default App;
