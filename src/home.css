@@ -21,7 +21,7 @@
 
 /* 🔍 Search bar container */
 .search-bar-wrapper {
-  width: 70%;
+  width:80%;
   padding-top: 10px;
   display: flex;
   justify-content: center;
@@ -29,15 +29,16 @@
 
 /* 🔍 Input */
 .search-input {
-  width: 70%;
+  width: 100%;
   font-size: 16px;
   border-radius: 8px;
   border: 1px solid #ccc;
+  padding-left: 10px;
 }
 
 .search-input:focus {
   outline: none;
-  border-color: #333;
+  /* border-color: #333; */
 }
 
 .no-data {

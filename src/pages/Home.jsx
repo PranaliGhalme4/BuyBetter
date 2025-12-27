@@ -25,13 +25,13 @@ const Home = () => {
   return (
     <div className="home-page">
       <div style={{display:"flex", paddingLeft:"30px"}}>
-      <div>
+      <div style={{width:"18%"}}>
       <h4>Total Products :{filteredProducts?.length} </h4>
       </div>
       <div className="search-bar-wrapper">
         <input
           type="text"
-          placeholder="Search products..."
+          placeholder="Search Products..."
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           className="search-input"
