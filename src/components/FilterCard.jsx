@@ -7,7 +7,6 @@ const FilterCard = ({
   setPrice,
   rating,
   setRating,
-  totalProducts
 }) => {
   return (
     <div className="filter-card">
