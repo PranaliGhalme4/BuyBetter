@@ -1,7 +1,7 @@
 .home-layout {
   display: flex;
   gap: 20px;
-  padding: 20px;
+  padding: 0px 20px 20px 20px;
   align-items: flex-start;
 }
 
@@ -30,7 +30,8 @@
 /* 🔍 Input */
 .search-input {
   width: 100%;
-  font-size: 16px;
+  height:40px;
+  font-size: 14px;
   border-radius: 8px;
   border: 1px solid #ccc;
   padding-left: 10px;
