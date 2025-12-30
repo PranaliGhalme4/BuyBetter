@@ -1,4 +1,5 @@
 import "./filterCard.css";
+import { FaFilter } from "react-icons/fa";
 
 const FilterCard = ({
   selectedCategory,
@@ -7,10 +8,28 @@ const FilterCard = ({
   setPrice,
   rating,
   setRating,
+  setOpen,
+  open
 }) => {
+  console.log("selected values", selectedCategory, price, rating)
   return (
     <div className="filter-card">
-      <h3>Filters</h3>
+      <div
+        className="filter-header"
+        style={{display:"flex", justifyContent:"space-between"}}
+        onClick={() => {
+            setSelectedCategory("all");
+            setPrice(200);
+            setRating(0);
+          setOpen(!open);
+        }}
+      >
+        <div style={{fontSize:20}}>
+  <span>Filters</span>
+        </div>
+      
+        <FaFilter style={{cursor:"pointer", paddingTop:5}} className="filter-icon" />
+      </div>
 
       {/* Category */}
       <div className="filter-group">

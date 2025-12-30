@@ -9,6 +9,7 @@ const Home = () => {
   const [price, setPrice] = useState(200);
   const [rating, setRating] = useState(0);
   const [search, setSearch] = useState("");
+  const [open , setOpen] = useState(false);
 
   const filteredProducts = products.filter((product) => {
     console.log("product category",product.rating , rating);
@@ -49,6 +50,8 @@ const Home = () => {
         rating={rating}
         setRating={setRating}
         totalProducts={filteredProducts.length}
+        open={open}
+        setOpen={setOpen}
       />
 
       {filteredProducts.length > 0 ? (
