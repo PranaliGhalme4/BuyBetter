@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { lazy, useState, Suspense, useMemo } from "react";
 import products from "../data/products.json";
-import FilterCard from "../components/FilterCard";
 import ProductList from "../components/ProductList";
 import "../home.css";
+
+const FilterCard = lazy(()=> import("../components/FilterCard"));
 
 const Home = () => {
   const [category, setCategory] = useState("all");
@@ -11,17 +12,18 @@ const Home = () => {
   const [search, setSearch] = useState("");
   const [open , setOpen] = useState(false);
 
-  const filteredProducts = products.filter((product) => {
-    console.log("product category",product.rating , rating);
+  const filteredProducts = useMemo(() => {
+  return products.filter((product) => {
     return (
-      product?.name?.toLowerCase()?.includes(search?.toLowerCase()) &&
-      (category === "all" || product.category.toLowerCase() === category.toLowerCase()) &&
+      product?.name?.toLowerCase().includes(search.toLowerCase()) &&
+      (category === "all" ||
+        product.category.toLowerCase() === category.toLowerCase()) &&
       product.price <= price &&
       product.rating >= rating
     );
   });
+}, [search, category, price, rating]);
 
-  console.log("filtered products", filteredProducts.length);
 
   return (
     <div className="home-page">
@@ -40,7 +42,8 @@ const Home = () => {
       </div>
       </div>
       
-    
+    <Suspense fallback={<div>Loading filters...</div>}>
+
     <div className="home-layout">
       <FilterCard      
         selectedCategory={category}
@@ -49,12 +52,12 @@ const Home = () => {
         setPrice={setPrice}
         rating={rating}
         setRating={setRating}
-        totalProducts={filteredProducts.length}
+        totalProducts={filteredProducts?.length}
         open={open}
         setOpen={setOpen}
       />
 
-      {filteredProducts.length > 0 ? (
+      {filteredProducts?.length > 0 ? (
   <ProductList products={filteredProducts} />
 ) : (
   <div className="grid">
@@ -67,6 +70,7 @@ const Home = () => {
   </div>
 )}
     </div>
+    </Suspense>
     </div>
   );
 };
