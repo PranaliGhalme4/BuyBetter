@@ -1,5 +1,7 @@
 import "./filterCard.css";
 import { FaFilter } from "react-icons/fa";
+import products from "../data/products.json";
+import { useMemo } from "react";
 
 const FilterCard = ({
   selectedCategory,
@@ -11,7 +13,21 @@ const FilterCard = ({
   setOpen,
   open
 }) => {
-  console.log("selected values", selectedCategory, price, rating)
+
+const allCategories = useMemo(() => {
+  return ["all", ...new Set(products.map(ele => ele.category))];
+}, []);
+
+const maxPrice = products.reduce((acc, nextVal)=>{
+  console.log("nextval", nextVal);
+  if(acc < nextVal.price){
+    acc=nextVal.price;
+  }
+  return acc;
+},0)
+
+  // console.log("maxPrice", maxPrice);
+
   return (
     <div className="filter-card">
       <div
@@ -31,29 +47,27 @@ const FilterCard = ({
         <FaFilter style={{cursor:"pointer", paddingTop:5}} className="filter-icon" />
       </div>
 
-      {/* Category */}
       <div className="filter-group">
         <label>Category</label>
         <select
           value={selectedCategory}
           onChange={(e) => setSelectedCategory(e.target.value)}
         >
-          <option value="all">All</option>
-          <option value="electronics">Electronics</option>
-          <option value="fashion">Fashion</option>
-          <option value="home">Home</option>
+          {allCategories.map((ele)=>{
+           return <option value={ele}>{ele}</option>
+          })}
         </select>
       </div>
 
       {/* Price */}
       <div className="filter-group">
-        <label>Max Price: ₹{price}</label>
+        <label>Max Price: ₹{maxPrice}</label>
         <input
           type="range"
           min="1"
-          max="200"
+          max={maxPrice}
           step="1"
-          value={price}
+          value={price? price: maxPrice}
           onChange={(e) => setPrice(e.target.value)}
         />
       </div>
