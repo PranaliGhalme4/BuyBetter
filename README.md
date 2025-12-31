@@ -1,3 +1,6 @@
+🚀 live demo link
+https://buy-better-y1hu.vercel.app/
+
 🛒 BuyBetter
 
 BuyBetter is a modern and responsive React-based web application that displays products in a clean grid layout, helping users browse and compare items easily.
