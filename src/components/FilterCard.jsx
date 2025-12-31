@@ -26,7 +26,6 @@ const maxPrice = products.reduce((acc, nextVal)=>{
   return acc;
 },0)
 
-  // console.log("maxPrice", maxPrice);
 
   return (
     <div className="filter-card">
@@ -59,7 +58,6 @@ const maxPrice = products.reduce((acc, nextVal)=>{
         </select>
       </div>
 
-      {/* Price */}
       <div className="filter-group">
         <label>Max Price: ₹{maxPrice}</label>
         <input
@@ -72,7 +70,6 @@ const maxPrice = products.reduce((acc, nextVal)=>{
         />
       </div>
 
-      {/* Rating */}
       <div className="filter-group">
         <label>Minimum Rating</label>
         <select
