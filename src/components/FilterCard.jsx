@@ -11,68 +11,65 @@ const FilterCard = ({
   rating,
   setRating,
   setOpen,
-  open
+  open,
 }) => {
+  const allCategories = useMemo(() => {
+    return ["all", ...new Set(products.map((ele) => ele.category))];
+  }, []);
 
-const allCategories = useMemo(() => {
-  return ["all", ...new Set(products.map(ele => ele.category))];
-}, []);
+  const maxPrice = products.reduce((acc, nextVal) => {
+    if (acc < nextVal.price) {
+      acc = nextVal.price;
+    }
+    return acc;
+  }, 0);
 
-const maxPrice = products.reduce((acc, nextVal)=>{
-  console.log("nextval", nextVal);
-  if(acc < nextVal.price){
-    acc=nextVal.price;
-  }
-  return acc;
-},0)
-
+  const handleFilterHeaderClick = () => {
+    setSelectedCategory("all");
+    setPrice(200);
+    setRating(0);
+    setOpen(!open);
+  };
 
   return (
     <div className="filter-card">
-      <div
-        className="filter-header"
-        style={{display:"flex", justifyContent:"space-between"}}
-        onClick={() => {
-            setSelectedCategory("all");
-            setPrice(200);
-            setRating(0);
-          setOpen(!open);
-        }}
-      >
-        <div style={{fontSize:20}}>
-  <span>Filters</span>
-        </div>
-      
-        <FaFilter style={{cursor:"pointer", paddingTop:5}} className="filter-icon" />
+      <div className="filter-header" onClick={handleFilterHeaderClick}>
+        <h3 className="filter-title">Filters</h3>
+        <FaFilter className="filter-icon" />
       </div>
 
       <div className="filter-group">
-        <label>Category</label>
+        <label className="filter-label">Category</label>
         <select
+          className="filter-select"
           value={selectedCategory}
           onChange={(e) => setSelectedCategory(e.target.value)}
         >
-          {allCategories.map((ele)=>{
-           return <option value={ele}>{ele}</option>
-          })}
+          {allCategories.map((ele) => (
+            <option key={ele} value={ele}>
+              {ele}
+            </option>
+          ))}
         </select>
       </div>
 
       <div className="filter-group">
-        <label>Max Price: ₹{maxPrice}</label>
+        <label className="filter-label">Max Price: ₹{maxPrice}</label>
         <input
           type="range"
+          className="filter-range"
           min="1"
           max={maxPrice}
           step="1"
-          value={price? price: maxPrice}
+          value={price ? price : maxPrice}
           onChange={(e) => setPrice(e.target.value)}
         />
       </div>
 
       <div className="filter-group">
-        <label>Minimum Rating</label>
+        <label className="filter-label">Minimum Rating</label>
         <select
+          className="filter-select"
           value={rating}
           onChange={(e) => setRating(e.target.value)}
         >
