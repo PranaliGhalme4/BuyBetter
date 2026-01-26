@@ -1,4 +1,6 @@
-import { lazy, useState, Suspense, useMemo } from "react";
+import { lazy, useState, Suspense, useMemo, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { FaHeart, FaShoppingCart } from "react-icons/fa";
 import products from "../data/products.json";
 import ProductList from "../components/ProductList";
 import "../home.css";
@@ -6,11 +8,53 @@ import "../home.css";
 const FilterCard = lazy(() => import("../components/FilterCard"));
 
 const Home = () => {
+  const navigate = useNavigate();
   const [category, setCategory] = useState("all");
   const [price, setPrice] = useState(200);
   const [rating, setRating] = useState(0);
   const [search, setSearch] = useState("");
   const [open, setOpen] = useState(false);
+
+  const [wishlistCount, setWishlistCount] = useState(() => {
+    const wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+    return wishlist.length;
+  });
+
+  // Update wishlist count when wishlist changes
+  useEffect(() => {
+    const handleWishlistUpdate = () => {
+      const wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+      setWishlistCount(wishlist.length);
+    };
+
+    // Listen for custom wishlist update event
+    window.addEventListener("wishlistUpdated", handleWishlistUpdate);
+
+    return () => {
+      window.removeEventListener("wishlistUpdated", handleWishlistUpdate);
+    };
+  }, []);
+
+  const [cartCount, setCartCount] = useState(() => {
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    return cart.reduce((total, item) => total + item.quantity, 0);
+  });
+
+  // Update cart count when cart changes
+  useEffect(() => {
+    const handleCartUpdate = () => {
+      const cart = JSON.parse(localStorage.getItem("cart")) || [];
+      const totalQuantity = cart.reduce((total, item) => total + item.quantity, 0);
+      setCartCount(totalQuantity);
+    };
+
+    // Listen for custom cart update event
+    window.addEventListener("cartUpdated", handleCartUpdate);
+
+    return () => {
+      window.removeEventListener("cartUpdated", handleCartUpdate);
+    };
+  }, []);
 
   const filteredProducts = useMemo(() => {
     return products.filter((product) => {
@@ -40,6 +84,20 @@ const Home = () => {
             className="search-input"
           />
         </div>
+        <button 
+          className="wishlist-header-btn"
+          onClick={() => navigate("/wishlist")}
+          title="View Wishlist"
+        >
+          <FaHeart /> Wishlist ({wishlistCount})
+        </button>
+        <button 
+          className="cart-header-btn"
+          onClick={() => navigate("/cart")}
+          title="View Cart"
+        >
+          <FaShoppingCart /> Cart ({cartCount})
+        </button>
       </div>
 
       <Suspense fallback={<div className="loading-filters">Loading filters...</div>}>
