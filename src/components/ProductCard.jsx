@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { FaHeart, FaRegHeart, FaShoppingCart, FaCheck } from "react-icons/fa";
 
 export default function ProductCard({ product }) {
   const navigate = useNavigate();
@@ -42,6 +43,9 @@ export default function ProductCard({ product }) {
     // Save updated cart to localStorage
     localStorage.setItem("cart", JSON.stringify(cart));
     
+    // Dispatch custom event to update cart count in other components
+    window.dispatchEvent(new Event("cartUpdated"));
+    
     // Show added state
     setIsAdded(true);
     setTimeout(() => setIsAdded(false), 2000);
@@ -71,6 +75,9 @@ export default function ProductCard({ product }) {
       localStorage.setItem("wishlist", JSON.stringify(wishlist));
       setIsWishlisted(true);
     }
+    
+    // Dispatch custom event to update wishlist count in other components
+    window.dispatchEvent(new Event("wishlistUpdated"));
   };
 
   return (
@@ -86,7 +93,7 @@ export default function ProductCard({ product }) {
           onClick={handleAddToWishlist}
           title={isWishlisted ? "Remove from wishlist" : "Add to wishlist"}
         >
-          {isWishlisted ? "❤️" : "🤍"}
+          {isWishlisted ? <FaHeart /> : <FaRegHeart />}
         </button>
       </div>
       <div className="product-card-content">
@@ -100,7 +107,13 @@ export default function ProductCard({ product }) {
             onClick={handleAddToCart}
             title="Add to cart"
           >
-            {isAdded ? "✓ Added" : "🛒"}
+            {isAdded ? (
+              <>
+                <FaCheck /> Added
+              </>
+            ) : (
+              <FaShoppingCart />
+            )}
           </button>
         </div>
       </div>
